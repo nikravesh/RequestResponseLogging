@@ -62,6 +62,17 @@ app.Run();
 ```
 Pay attention, UseUnHandleException must be on top of it can log unhandled exceptions when the project has been launched.
 
+## Logging sample
+```
+2024-04-28 22:44:32.467 +03:30 INF Request: https localhost:7145/api/UserAuthentication/login  {
+  "userName": "string",
+  "password": "string"
+}
+Request headers: 
+
+2024-04-28 22:44:33.367 +03:30 INF Response: 200: {"userName":"string","password":"string"}
+```
+
 ## License
 This project is licensed under the MIT License: [MIT License](https://opensource.org/licenses/MIT).
 
