@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RequestResponseLogging.Models;
 
 namespace RequestResponseLogging.Authentication;
 
 [Route("api/[controller]")]
-public class UserAuthentication : ControllerBase
+public class UserAuthenticationController : ControllerBase
 {
-    private readonly ILogger<UserAuthentication> _logger;
+    private readonly ILogger<UserAuthenticationController> _logger;
 
-    public UserAuthentication(ILogger<UserAuthentication> logger)
+    public UserAuthenticationController(ILogger<UserAuthenticationController> logger)
     {
         _logger = logger;
     }

@@ -1,4 +1,4 @@
-﻿namespace RequestResponseLogging.Authentication;
+﻿namespace RequestResponseLogging.Models;
 
 public class UserModel
 {
