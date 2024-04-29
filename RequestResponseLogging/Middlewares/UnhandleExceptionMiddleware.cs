@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace RequestResponseLogging.Middlewares;
 
@@ -31,7 +29,7 @@ public class UnhandleExceptionMiddleware
     {
         _logger.LogError(ex, "Unknown error occurs!");
 
-        string response = JsonConvert.SerializeObject(new 
+        string response = JsonConvert.SerializeObject(new
         { isSuccess = false, errorCode = 500, message = "UnhandleExceptionMessage" });
         httpContext.Response.StatusCode = 500;
         httpContext.Response.ContentType = "application/json";

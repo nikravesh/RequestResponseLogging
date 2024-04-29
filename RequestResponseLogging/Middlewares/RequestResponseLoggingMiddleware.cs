@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text;
-
 using Microsoft.Extensions.Primitives;
 
 namespace RequestResponseLogging.Middlewares;
