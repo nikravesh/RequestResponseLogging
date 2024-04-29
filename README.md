@@ -32,8 +32,6 @@ using RequestResponseLogging.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -41,13 +39,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseUnHandleException();
 app.UserRequestResponseLogging();
 
@@ -61,6 +57,17 @@ app.MapControllers();
 app.Run();
 ```
 Pay attention, UseUnHandleException must be on top of it can log unhandled exceptions when the project has been launched.
+
+## Logging sample
+```
+2024-04-28 22:44:32.467 +03:30 INF Request: https localhost:7145/api/UserAuthentication/login  {
+  "userName": "string",
+  "password": "string"
+}
+Request headers: 
+
+2024-04-28 22:44:33.367 +03:30 INF Response: 200: {"userName":"string","password":"string"}
+```
 
 ## License
 This project is licensed under the MIT License: [MIT License](https://opensource.org/licenses/MIT).
